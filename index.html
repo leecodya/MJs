@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>MJ's Simple Moving</title>
+		<link rel="stylesheet" href="style.css">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+		<script src="main.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<header>
+			<div class="wrapper">
+				<div class="row">
+					<!--Logo-->
+					<div class="col-sm-3">
+						<div class="logo">
+							<img src="img/logo/MJs-Logo-2.png" alt="MJs Simple Moving Logo">
+						</div>
+					</div>	
+
+					<!--Phone-->
+					<div class="col-sm-3 header-info">
+						<h5 class="uppercase">Any Question At</h5>
+						<h5 class="faded">555-555-5555</h5>
+					</div>
+
+					<!--Email-->
+					<div class="col-sm-1 header-info icon">
+						<img src="img/placeholder.png" alt="Email Envelope">						
+					</div>
+					<div class="col-sm-2 header-info">
+						<h5>Email us at</h5>
+						<h5 class="faded">email@email.com</h5>						
+					</div>
+
+					<!--Social Media Icons-->
+					<div class="col-sm-1 header-info icon">
+						<img src="img/placeholder.png" alt="Social Media Icon1">
+					</div>
+					<div class="col-sm-1 header-info icon">
+						<img src="img/placeholder.png" alt="Social Media Icon2">
+					</div>
+					<div class="col-sm-1 header-info icon">
+						<img src="img/placeholder.png" alt="Social Media Icon3">
+					</div>					
+				</div>
+			</div>
+			<!--Nav-->
+			<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+				<div class="wrapper">
+					<!-- Links -->
+					<!-- Toggler/collapsibe Button -->
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<!--5/10 FIGURE OUT THE ACTIVE ATTRIBUTE TO GET A BOTTOM BORDER WHEN THE NAV LINK IS ACTIVE-->
+					<!-- Navbar links -->
+					<div class="collapse navbar-collapse" id="collapsibleNavbar">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link uppercase" href="#!home">Home</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link uppercase" href="#!services">Services</a>
+							</li> 
+							<li class="nav-item">
+								<a class="nav-link uppercase" href="#!free-quote">Free Quote</a>
+							</li> 
+							<li class="nav-item">
+								<a class="nav-link uppercase" href="#!plan-moving">Plan Moving</a>
+							</li> 
+							<!-- Dropdown -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle uppercase" href="#" id="navbardrop" data-toggle="dropdown">
+									Pages
+								</a>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="#!make-appointment">Make Appointment</a>
+									<a class="dropdown-item" href="#!about">About Us</a>
+									<a class="dropdown-item" href="#!faq">FAQ</a>
+									<!--<a class="dropdown-item" href="#">404 Page</a>-->
+								</div>
+							</li> 
+							<li class="nav-item">
+								<a class="nav-link uppercase" href="#!gallery">Gallery</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link uppercase" href="#!contact">Contact Us</a>
+							</li>
+						</ul>
+					</div> 
+				</div>
+			</nav>			
+		</header>		
+		<div ng-view></div> 
+		<script>
+			var app = angular.module("myApp", ["ngRoute"]);
+			app.config(function($routeProvider) {
+				$routeProvider
+				.when("/home", {
+					templateUrl : "home.html"
+				})
+				.when("/about", {
+					templateUrl : "about.html"
+				})
+				.when("/contact", {
+					templateUrl : "contact.html"
+				})
+				.when("/faq", {
+					templateUrl : "faq.html"
+				})
+				.when("/free-quote", {
+					templateUrl : "free-quote.html"
+				})
+				.when("/gallery", {
+					templateUrl : "gallery.html"
+				})
+				.when("/make-appointment", {
+					templateUrl : "make-appointment.html"
+				})
+				.when("/plan-moving", {
+					templateUrl : "plan-moving.html"
+				})
+				.when("/services", {
+					templateUrl : "services.html"
+				})
+				.otherwise({
+					templateUrl : "home.html"
+				});
+			});
+		</script>
+
+		<footer>
+			<div class="wrapper">				
+				<div class="row">
+					<div class="col-md-4">
+						<h3 class="gold">MJ's Simple Moving</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur, nisi nec sagittis aliquam, tortor magna ultrices ipsum, a gravida augue augue sed nulla. Ut in ultrices nisi. Etiam facilisis congue tortor, at molestie nunc commodo ac.</p>
+						<!--Social Media Icons-->
+						<div class="row">
+							<div class="col-sm-4 footer-icon">
+								<img src="img/placeholder.png" alt="Social Media Icon1">
+							</div>
+							<div class="col-sm-4 footer-icon">
+								<img src="img/placeholder.png" alt="Social Media Icon2">
+							</div>
+							<div class="col-sm-4 footer-icon">
+								<img src="img/placeholder.png" alt="Social Media Icon3">
+							</div>	
+						</div>
+					</div>
+					<div class="col-md-4">
+						<h4 class="uppercase gold">Contact</h4><br>
+						<h5 class="uppercase">Give us a call anytime at</h5>
+						<h5 class="faded">555-555-5555</h5>	<br>					
+						<h5>Send your mail at</h5>
+						<h5 class="faded">email@email.com</h5>
+					</div>
+					<div class="col-md-4">
+						<h4 class="uppercase gold">Gallery</h4>
+						<div class="row">
+							<div class="col-sm-4 sm-gallery">
+								<img src="img/placeholder.png" alt="Gallery Pic1">
+							</div>
+							<div class="col-sm-4 sm-gallery">
+								<img src="img/placeholder.png" alt="Gallery Pic2">
+							</div>
+							<div class="col-sm-4 sm-gallery">
+								<img src="img/placeholder.png" alt="Gallery Pic3">
+							</div>
+						</div><br>
+						<div class="row">
+							<div class="col-sm-4 sm-gallery">
+								<img src="img/placeholder.png" alt="Gallery Pic4">
+							</div>
+							<div class="col-sm-4 sm-gallery">
+								<img src="img/placeholder.png" alt="Gallery Pic5">
+							</div>
+							<div class="col-sm-4 sm-gallery">
+								<img src="img/placeholder.png" alt="Gallery Pic6">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<h6>&copy; MJ's Simple Moving 2018 | Created by Cody Lee</h6>
+			</div>
+		</footer>
+	</body>
+</html>
